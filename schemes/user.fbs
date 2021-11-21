@@ -1,0 +1,14 @@
+namespace Main.User;
+
+enum Gender:byte { Male, Female }
+
+
+table User {
+  id:int;
+  name:string;
+  gender:Gender;
+  age: int;
+}
+
+
+root_type User;
