@@ -1,4 +1,4 @@
-namespace Main.User;
+namespace dto.user;
 
 enum Gender:byte { Male, Female }
 

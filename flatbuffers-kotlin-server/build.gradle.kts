@@ -17,6 +17,7 @@ repositories {
 
 val vertxVersion = "4.2.1"
 val junitJupiterVersion = "5.7.0"
+val flatbuffersVersion = "2.0.3"
 
 val mainVerticleName = "com.tikhon.server.MainVerticle"
 val launcherClassName = "io.vertx.core.Launcher"
@@ -30,10 +31,13 @@ application {
 
 dependencies {
   implementation(platform("io.vertx:vertx-stack-depchain:$vertxVersion"))
-  implementation("io.vertx:vertx-lang-kotlin")
+  implementation("io.vertx:vertx-web:$vertxVersion")
+  implementation("io.vertx:vertx-lang-kotlin:$vertxVersion")
+  implementation("com.google.flatbuffers:flatbuffers-java:$flatbuffersVersion")
   implementation(kotlin("stdlib-jdk8"))
-  testImplementation("io.vertx:vertx-junit5")
+  testImplementation("io.vertx:vertx-junit5:$vertxVersion")
   testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+  testImplementation("io.vertx:vertx-junit5-web-client:3.9.10")
 }
 
 val compileKotlin: KotlinCompile by tasks
